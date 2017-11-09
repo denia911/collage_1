@@ -1,6 +1,6 @@
 # collage_1
-Программа делет запрос у пользователя на нужное ему действие.
-После указанного действия программа подбирает работника из числа студентов.
-Подбор производится по специальностям соответственно к запросу.
+The program sends a request to the user for the desired action.
+After the specified action the program selects the worker from among students.
+Selection is made by specialty, respectively, to the request.
 
-Для запуска программы нужно запустить app.rb
+To start the program, you need to run app.rb
