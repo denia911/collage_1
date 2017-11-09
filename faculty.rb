@@ -1,5 +1,5 @@
 # class for specials
-class Special
+class Faculty
   def initialize(special_name)
     @special_name = special_name
   end

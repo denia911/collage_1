@@ -7,19 +7,19 @@ NAU = Collage.new('nau')
 
 nau = NAU.create
 
-system_engineering = Special.new('system_engineering')
+system_engineering = Faculty.new('system_engineering')
 software_fac = system_engineering.create
 nau << software_fac
 
-program = Special.new('program')
+program = Faculty.new('program')
 program_fac = program.create
 nau << program_fac
 
-mechanick = Special.new('mechanick')
+mechanick = Faculty.new('mechanick')
 mechanick_fac = mechanick.create
 nau << mechanick_fac
 
-economy = Special.new('economy')
+economy = Faculty.new('economy')
 economy_fac = economy.create
 nau << economy_fac
 # Adding new students and distribution by faculty
@@ -57,9 +57,9 @@ puts('Welcome to our collage. What you need to do?
 n_action = gets.chomp
 
 case n_action.downcase
-  when 'software' then puts(software_fac[rand(software_fac.size)])
-  when 'robot' then puts(program_fac[rand(program_fac.size)])
-  when 'draft' then puts(mechanick_fac[rand(mechanick_fac.size)])
-  when 'calculate_budget' then puts(economy_fac[rand(economy_fac.size)])
-  else puts('Please enter one of these values')
+when 'software' then puts(software_fac[rand(software_fac.size)])
+when 'robot' then puts(program_fac[rand(program_fac.size)])
+when 'draft' then puts(mechanick_fac[rand(mechanick_fac.size)])
+when 'calculate_budget' then puts(economy_fac[rand(economy_fac.size)])
+else puts('Please enter one of these values')
 end
