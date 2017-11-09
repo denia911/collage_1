@@ -1,4 +1,3 @@
-require_relative 'student_find'
 require_relative 'student'
 require_relative 'collage_class'
 require_relative 'faculty'
@@ -27,36 +26,40 @@ nau << economy_fac
 i = 0
 loop do
   i += 1
-  student1 = Student.new(Faker::Name.name, software_fac)
-  student1.add_student
+  student = Student.new(Faker::Name.name, software_fac)
+  student.add_student
   break if i == 10
 end
 i = 0
 loop do
   i += 1
-  student2 = Student.new(Faker::Name.name, program_fac)
-  student2.add_student
+  student = Student.new(Faker::Name.name, program_fac)
+  student.add_student
   break if i == 10
 end
 i = 0
 loop do
   i += 1
-  student3 = Student.new(Faker::Name.name, mechanick_fac)
-  student3.add_student
+  student = Student.new(Faker::Name.name, mechanick_fac)
+  student.add_student
   break if i == 10
 end
 i = 0
 loop do
   i += 1
-  student3 = Student.new(Faker::Name.name, economy_fac)
-  student3.add_student
+  student = Student.new(Faker::Name.name, economy_fac)
+  student.add_student
   break if i == 10
 end
-print('Welcome to our collage. What you need to do?
+puts('Welcome to our collage. What you need to do?
 (software, robot, draft, caclulate_budget)')
 
 n_action = gets.chomp
 
-s_find = StudentFind.new(n_action, software_fac, program_fac, mechanick_fac,
-                         economy_fac)
-s_find.next_student
+case n_action.downcase
+  when 'software' then puts(software_fac[rand(software_fac.size)])
+  when 'robot' then puts(program_fac[rand(program_fac.size)])
+  when 'draft' then puts(mechanick_fac[rand(mechanick_fac.size)])
+  when 'calculate_budget' then puts(economy_fac[rand(economy_fac.size)])
+  else puts('Please enter one of these values')
+end
