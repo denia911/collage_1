@@ -1,19 +1,25 @@
+require_relative 'faculty'
 # Class for collage
 class Collage
-  attr_reader :faculties
-
-  def initialize(name, faculties = nil)
+  attr_accessor 'software_fac'
+  attr_accessor 'program_fac'
+  attr_accessor 'mechanick_fac'
+  attr_accessor 'economy_fac'
+  def initialize(name)
     @name = name
-    @faculties = faculties || {}
+    @software_fac = Faculty.new('software_fac')
+    @program_fac = Faculty.new('program_fac')
+    @mechanick_fac = Faculty.new('mechanick_fac')
+    @economy_fac = Faculty.new('economy_fac')
   end
 
   def find_student(action)
     @action = action
     case @action.downcase
-    when 'software' then random_student(@software)
-    when 'robot' then random_student(@program)
-    when 'draft' then random_student(@mechanick)
-    when 'calculate_budget' then random_student(@economy)
+    when 'software' then random_student(@software_fac.students)
+    when 'robot' then random_student(@program_fac.students)
+    when 'draft' then random_student(@mechanick_fac.students)
+    when 'calculate_budget' then random_student(@economy_fac.students)
     else 'Please enter one of these values'
     end
   end
@@ -21,7 +27,7 @@ class Collage
   private
 
   def random_student(faculty)
-    stud_rand = rand(faculties[faculty].size)
-    students_count = faculties[faculty][stud_rand]
+    stud_rand = rand(faculty.size)
+    students_count = faculty[stud_rand]
   end
 end

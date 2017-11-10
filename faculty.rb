@@ -1,8 +1,8 @@
 # class for specials
 class Faculty
-  attr_reader :students
+  attr_accessor :students
 
-  def initialize(name, students = nill)
+  def initialize(name, students = nil)
     @name = name
     @students = students || []
   end
