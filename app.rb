@@ -1,4 +1,3 @@
-require_relative 'student'
 require_relative 'collage'
 require_relative 'faculty'
 require 'faker'
@@ -10,4 +9,4 @@ puts('Welcome to our collage. What you need to do?
 n_action = gets.chomp
 
 collage = Collage.new('collage', @faculties)
-collage.find_student(n_action)
+puts collage.find_student(n_action)
