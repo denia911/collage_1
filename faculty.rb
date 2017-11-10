@@ -1,10 +1,9 @@
 # class for specials
 class Faculty
-  def initialize(special_name)
-    @special_name = special_name
-  end
+  attr_reader :students
 
-  def create
-    @special_name = []
+  def initialize(name, students = nill)
+    @name = name
+    @students = students || []
   end
 end
