@@ -1,4 +1,4 @@
-# class for specials
+# Class for specials
 class Faculty
   attr_accessor :students
 

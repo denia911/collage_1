@@ -5,6 +5,7 @@ class Collage
   attr_accessor 'program_fac'
   attr_accessor 'mechanick_fac'
   attr_accessor 'economy_fac'
+
   def initialize(name)
     @name = name
     @software_fac = Faculty.new('software_fac')
@@ -27,7 +28,6 @@ class Collage
   private
 
   def random_student(faculty)
-    stud_rand = rand(faculty.size)
-    students_count = faculty[stud_rand]
+    faculty[rand(faculty.size)]
   end
 end
