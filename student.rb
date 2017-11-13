@@ -3,4 +3,8 @@ class Student
   def initialize(name = nil)
     @name = name
   end
+
+  def name
+    print(@name)
+  end
 end
