@@ -5,6 +5,6 @@ class Student
   end
 
   def name
-    print(@name)
+    @name
   end
 end
