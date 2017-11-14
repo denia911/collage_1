@@ -28,6 +28,6 @@ class Collage
   private
 
   def random_student(faculty)
-    (faculty[rand(faculty.size)]).s_name
+    (faculty[rand(faculty.size)]).name
   end
 end

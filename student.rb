@@ -5,8 +5,4 @@ class Student
   def initialize(name = nil)
     @name = name
   end
-
-  def s_name
-    @name
-  end
 end
