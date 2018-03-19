@@ -7,5 +7,3 @@ class Student
     Faker::Name.name
   end
 end
-
-print
