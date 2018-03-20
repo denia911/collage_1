@@ -2,8 +2,8 @@
 class Faculty
   attr_accessor :students
 
-  def initialize(name, students = nil)
+  def initialize(name, students)
     @name = name
-    @students = students || []
+    @students = students
   end
 end

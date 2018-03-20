@@ -1,4 +1,5 @@
 require_relative 'faculty'
+require_relative 'student'
 # Class for collage
 class Collage
   attr_accessor 'software_fac'
@@ -8,10 +9,10 @@ class Collage
 
   def initialize(name)
     @name = name
-    @software_fac = Faculty.new('software_fac')
-    @program_fac = Faculty.new('program_fac')
-    @mechanick_fac = Faculty.new('mechanick_fac')
-    @economy_fac = Faculty.new('economy_fac')
+    @software_fac = Faculty.new('software_fac', self.students)
+    @program_fac = Faculty.new('program_fac', self.students)
+    @mechanick_fac = Faculty.new('mechanick_fac', self.students)
+    @economy_fac = Faculty.new('economy_fac', self.students)
   end
 
   def find_student(action)
@@ -23,6 +24,11 @@ class Collage
     when 'calculate_budget' then random_student(@economy_fac.students)
     else 'Please enter one of these values'
     end
+  end
+
+  def students
+    student = Student.new
+    (0..40).map { student.name }
   end
 
   private
